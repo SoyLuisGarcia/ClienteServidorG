@@ -25,7 +25,7 @@ SECRET_KEY = '4$8gsz7qww*844%3l@9z@hz%z(xyou&&#5a1bfn_-z#!et(b-k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '52.91.77.74']
 
 
 # Application definition
@@ -74,9 +74,13 @@ WSGI_APPLICATION = 'ClienteServer.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+   'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'luisdb',
+        'USER': 'postgres',
+        'PASSWORD': 'master1234',
+        'HOST': 'luisgarcia.ckbzvg2sh4ly.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
